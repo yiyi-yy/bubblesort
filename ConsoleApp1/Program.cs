@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Text;
+using ConsoleApp1.Implement;
 using MySql.Data.MySqlClient;
 using Org.BouncyCastle.Utilities;
 using Renci.SshNet;
@@ -11,8 +12,18 @@ namespace ConsoleApp1
     {
         static void Main(string[] args)
         {
-            maopao();
+          //  maopao();
             Console.WriteLine("Hello World!");
+
+            ISort sort = new ImplSort() ;
+            int[] arr = new int[] { 1, 3, 2, 5, 7, 3, 8, 34, 5 };
+            int[] aa=sort.bubbleSort(arr);
+            StringBuilder sb = new StringBuilder();
+            foreach (var item in aa)
+            {
+                sb.Append(item + ",");
+            }
+            Console.WriteLine(sb.ToString());
         }
 
         public void mysql()
