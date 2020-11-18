@@ -16,14 +16,13 @@ namespace ConsoleApp1
             Console.WriteLine("Hello World!");
 
             ISort sort = new ImplSort() ;
-            int[] arr = new int[] { 1, 3, 2, 5, 7, 3, 8, 34, 5 };
-            int[] aa=sort.bubbleSort(arr);
-            StringBuilder sb = new StringBuilder();
-            foreach (var item in aa)
-            {
-                sb.Append(item + ",");
-            }
-            Console.WriteLine(sb.ToString());
+            int[] arr = new int[] { 2, 1,3,5,4,7,0,2, 4, 8, 4, 29, 2, 1 };
+            string bubbleSort =sort.arrToString( sort.bubbleSort(arr));
+            Console.WriteLine($"冒泡排序后：{bubbleSort}");
+
+
+            string selectedSort = sort.arrToString(sort.selectedSort(arr));
+            Console.WriteLine($"选择排序后：{bubbleSort}");
         }
 
         public void mysql()
